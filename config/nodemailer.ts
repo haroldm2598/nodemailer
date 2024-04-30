@@ -1,5 +1,5 @@
 // import nodemailer from 'nodemailer';
-const nodemailer = require('nodemailer');
+let nodemailer = require('nodemailer');
 
 const email = process.env.EMAIL;
 const pass = process.env.PASS;
