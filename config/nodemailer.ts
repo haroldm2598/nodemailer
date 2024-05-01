@@ -5,7 +5,9 @@ const email = process.env.EMAIL;
 const pass = process.env.PASS;
 
 export const transporter = nodemailer.createTransport({
-	service: 'gmail',
+	host: 'smtp.ethereal.email',
+	port: 587,
+	// service: 'gmail',
 	auth: {
 		user: email,
 		pass
@@ -14,5 +16,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions = {
 	from: email,
-	to: email
+	to: 'mikedcruz3@gmail.com'
 };
