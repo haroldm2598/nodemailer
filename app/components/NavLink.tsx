@@ -14,6 +14,9 @@ export default function NavLink() {
 				<li>
 					<Link href='/threecard'>threecard</Link>
 				</li>
+				<li>
+					<Link href='/about'>about</Link>
+				</li>
 			</ul>
 
 			<div className='cursor-pointer'>

@@ -1,5 +1,5 @@
 'use client';
-import { sendContactForm } from '@/lib/api';
+import { sendContactForm } from '@/lib/api/api';
 import { useForm } from 'react-hook-form';
 
 interface FormProps {

@@ -26,25 +26,28 @@ const containerVars = {
 const childVars = {
 	initial: {
 		y: '100vh',
-		transition: {
-			duration: 0.5,
-			delay: 0.5,
-			ease: [0.37, 0, 0.63, 1]
-		}
+		opacity: 0
 	},
-	open: {
+	open: (custom: number) => ({
 		y: 0,
+		opacity: 1,
 		transition: {
 			ease: [0, 0.55, 0.45, 1],
 			duration: 0.7,
-			delay: 0.5
+			delay: 0.5 * custom
 		}
-	}
+	})
 };
 
+interface AnimeStaggeredProps {
+	children: React.ReactNode;
+	custom: number;
+}
+
 export default function AnimateSection({
-	children
-}: Readonly<{ children: React.ReactNode }>) {
+	children,
+	custom
+}: AnimeStaggeredProps) {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 	const inViewControl = useAnimation();
@@ -67,6 +70,7 @@ export default function AnimateSection({
 							variants={childVars}
 							initial='initial'
 							animate={inViewControl}
+							custom={custom}
 						>
 							{children}
 						</motion.div>
