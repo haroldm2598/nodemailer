@@ -17,6 +17,9 @@ export default function NavLink() {
 				<li>
 					<Link href='/about'>about</Link>
 				</li>
+				<li>
+					<Link href='/zoho'>zoho</Link>
+				</li>
 			</ul>
 
 			<div className='cursor-pointer'>

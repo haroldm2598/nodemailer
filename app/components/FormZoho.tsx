@@ -1,5 +1,5 @@
 'use client';
-import { sendContactForm } from '@/lib/api/api';
+import { sendZohoForm } from '@/lib/api/apiZoho';
 import { useForm } from 'react-hook-form';
 
 interface FormProps {
@@ -16,13 +16,9 @@ export default function Form() {
 	const { register, handleSubmit, formState } = formValues;
 	const { errors } = formState;
 
-	// https://medium.com/@evanch98/step-by-step-integrating-nodemailer-for-email-functionality-in-next-js-6730f2a658df
-	// gawa ng account sa zoho meron na
-	// hanapan ng password and username na ilalagay sa api nito
 	const sendMail = async (data: FormProps) => {
 		try {
-			// make a TOAST like in chakra ui whenever success sent
-			await sendContactForm(data);
+			await sendZohoForm(data);
 			alert('success');
 		} catch (error) {
 			console.log(error);
@@ -87,16 +83,3 @@ export default function Form() {
 		</form>
 	);
 }
-
-// https://www.youtube.com/watch?v=t2LvPXHLrek&t=1988s
-// use changeEvent for definition of event.target
-// const handleChange = ({
-// 	target
-// }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-// 	setState((prev) => ({
-// 		...prev,
-// 		values: {
-// 			...prev.values,
-// 			[target.name]: target.value
-// 		}
-// 	}));
