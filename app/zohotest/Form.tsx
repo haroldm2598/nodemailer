@@ -1,5 +1,5 @@
 'use client';
-import { sendZohoForm } from '@/lib/api/apiZoho';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
 interface FormProps {
@@ -18,7 +18,11 @@ export default function Form() {
 
 	const sendMail = async (data: FormProps) => {
 		try {
-			await sendZohoForm(data);
+			await axios.post('/zohotest/api', {
+				name: data.name,
+				email: data.email,
+				message: data.message
+			});
 			alert('success');
 		} catch (error) {
 			console.log(error);

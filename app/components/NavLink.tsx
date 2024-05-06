@@ -8,7 +8,7 @@ export default function NavLink() {
 				<li>
 					<Link href='/'>NodeMailer</Link>
 				</li>
-				<li>
+				{/* <li>
 					<Link href='/framer'>Framer</Link>
 				</li>
 				<li>
@@ -16,9 +16,12 @@ export default function NavLink() {
 				</li>
 				<li>
 					<Link href='/about'>about</Link>
-				</li>
-				<li>
+				</li> */}
+				{/* <li>
 					<Link href='/zoho'>zoho</Link>
+				</li> */}
+				<li>
+					<Link href='/zohotest'>zohotest</Link>
 				</li>
 			</ul>
 
